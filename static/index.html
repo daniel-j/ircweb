@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>IRC webchat</title>
+	<link rel="stylesheet/less" type="text/css" href="/style/style.less">
+	<script type="text/javascript">less = { env: 'development' };</script>
+	<script src="/js/lib/less-1.5.0.min.js"></script>
+</head>
+<body>
+
+<section id="chatView" class="view" data-name="chat" data-states="behind">
+	<nav id="tabs">
+		<ul>
+			<li id="serverChannel">bsnet</li>
+			<li>#Asd</li>
+		</ul>
+		<button id="addChannel">+</button>
+	</nav>
+	<div id="chatwrap"></div>
+	<div id="userlistwrap"></div>
+	<form id="chatForm" class="highlight" autocomplete="off" onsubmit="return false;">
+		<div id="inputChatWrapper">
+				<input type="text" id="inputChat" disabled>
+		</div>
+		<input type="submit" value="SEND" id="submitChat" disabled>
+	</form>
+</section>
+
+<section id="connectView" class="view" data-name="connect">
+	<table class="centertable"><tbody><tr>
+		<td style="height: 1px; padding-top: 40px; white-space: nowrap;">
+			<img src="img/html5_connectivity.svg" height=66 class="html5badge">
+			<a href="http://nodejs.org"><img src="img/nodejs.png"></a>
+			<img src="img/html5_css3_styling.svg" height=66 class="html5badge" style="padding-left: 5px; padding-right: 5px;">
+		<br><br>
+		</td></tr>
+		<tr><td>
+			<div class="highlight">
+				<h1>irc webchat</h1>
+
+				<form id="connectForm">
+					<input type="text" id="inputNick" placeholder="nick" name="nick" required autofocus value="">
+					<br>
+					<input type="text" id="inputChannels" placeholder="channels" name="channels" required value="#BronyTalk">
+					<br>
+					<input type="submit" value="Connect" id="submitLogin">
+					<div id="connectError"></div>
+				</form>
+				<footer>Created by <a href="http://djazz.se/">djazz</a> - Powered by <a href="http://nodejs.org/">node.js</a>, <a href="http://socket.io/">socket.io</a> and <a href="http://expressjs.com/">express</a> - <a href="server.js">Server source code</a></footer>
+			</div>
+			<!-- To make login form appear in middle of screen -->
+			<br><br><br><br><br><br><br><br>
+		</td></tr>
+	</tbody></table>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/lib/jquery-2.0.3.js"></script>
+<script src="/js/View.js"></script>
+<script src="/js/ViewManager.js"></script>
+<script src="/js/ChannelManager.js"></script>
+<script src="/js/ChatItem.js"></script>
+<script src="/js/ChatManager.js"></script>
+<script src="/js/ConnectManager.js"></script>
+<script src="/js/ConnectionManager.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
